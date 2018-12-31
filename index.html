@@ -143,9 +143,8 @@
                 var t = p + (z()*2-1.1)*f
                 return (t>h||t<0) ? y(p) : t
             }
-            while (true) {
-              i()
-            }
+
+            window.setInterval(i, 100);
         </script>
     </body>
 </html>
