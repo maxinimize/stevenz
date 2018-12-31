@@ -78,7 +78,7 @@
           _gaq.push(['_setAccount', 'UA-38965494-1']);
           _gaq.push(['_setDomainName', 'evanyou.me']);
           _gaq.push(['_trackPageview']);
-          
+
           (function() {
             var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
@@ -117,8 +117,10 @@
             c.width = w*pr
             c.height = h*pr
             x.scale(pr, pr)
+            // 透明度
             x.globalAlpha = 0.6
             function i(){
+                // 清空画布
                 x.clearRect(0,0,w,h)
                 q=[{x:0,y:h*.7+f},{x:0,y:h*.7-f}]
                 while(q[1].x<w+f) d(q[0], q[1])
@@ -141,9 +143,9 @@
                 var t = p + (z()*2-1.1)*f
                 return (t>h||t<0) ? y(p) : t
             }
-            document.onclick = i
-            document.ontouchstart = i
-            i()
+            while (true) {
+              i()
+            }
         </script>
     </body>
 </html>
